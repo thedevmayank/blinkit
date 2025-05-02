@@ -1,0 +1,14 @@
+@import "tailwindcss";
+.slick-slide {
+    padding: 8px;
+    cursor: pointer;
+
+}
+.slick-next{
+    font-size: 25px;
+    color: red;
+}
+.active{
+    top: 100%;
+    
+}
