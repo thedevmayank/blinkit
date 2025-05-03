@@ -1,6 +1,6 @@
 @import "tailwindcss";
 .slick-slide {
-    padding: 8px;
+    padding: 5px;
     cursor: pointer;
 
 }

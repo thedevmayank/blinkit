@@ -26,7 +26,7 @@ function App() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
+        
         }
       },
       {
@@ -34,14 +34,16 @@ function App() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
-          initialSlide: 2
+          initialSlide: 2,
+          dots: true
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots: true
         }
       }
     ]
@@ -622,7 +624,8 @@ function App() {
       {/* for mobile */}
 
       {/* category start */}
-      <div className='block lg:hidden w-[100%] border mx-[auto]'>
+      
+      <div className='block lg:hidden w-[94%]  box-border mx-[auto]  '>
 
         <div className='block lg:hidden font-bold mt-3 '>
           <div className='text-[18px] ml-3 '>
@@ -692,12 +695,12 @@ function App() {
 
         {/* deals section start */}
 
-        <div className='text-[18px] ml-3 font-bold block lg:hidden mt-5'>
+        <div className='text-[18px]  font-bold block lg:hidden mt-5  '>
           Hot Deals
         </div>
-        <div className='block lg:hidden'>
+        <div className='block lg:hidden box-border w-[98%] '>
         <Slider {...settings} >
-            <div className=' shadow-[0px_0px_1px_0px] m-1 p-2'>
+            <div className=' shadow-[0px_0px_1px_0px] p-2'>
 
               <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/5ee4441d-9109-48fa-9343-f5ce82b905a6.jpg?ts=1706182143" />
               <div>

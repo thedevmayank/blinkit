@@ -96,7 +96,7 @@ export default function Header() {
 
                     {/* my cart  */}
                     <div className='text-center border'>
-                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px]' >My Cart shh</button>
+                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px]' >My Cart </button>
 
                             {/* my cart side box */}
 
@@ -239,6 +239,8 @@ export default function Header() {
 
             {/* for mobile */}
 
+            {/* header */}
+
             <div className=' lg:hidden block flex justify-between m-5'>
                 <div >
                     <p className='font-bold'>Delivery in 13 minutes</p>
@@ -250,6 +252,8 @@ export default function Header() {
                 </div>
 
             </div>
+
+            {/* header end */}
             <div className='lg:hidden block  w-[100%]'>
                 <div className=' lg:hidden block  w-[95%] mx-[auto]  flex p-[10px_14px] rounded-[7px] items-center mt-3 bg-[#F8F8F8] '>
                     <div className='text-[22px]'><CiSearch /></div>
