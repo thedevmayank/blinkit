@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './header.css'
 import { FaCaretDown } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
