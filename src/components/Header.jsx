@@ -96,7 +96,7 @@ export default function Header() {
 
                     {/* my cart  */}
                     <div className='text-center border'>
-                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px]' >My Cart</button>
+                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px]' >My Cart shh</button>
 
                             {/* my cart side box */}
 
