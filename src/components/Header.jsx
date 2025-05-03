@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../index.css';
+import './header.css'
 import { FaCaretDown } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
@@ -29,16 +29,20 @@ export default function Header() {
     let accountBoxFn = () => {
         setaccountBox(!accountBox)
     }
+
+    // for side modal
     const [show,setshow] = useState(false)
-    let setShow =()=>{
+    let setShowFn =()=>{
         setshow(!show)
+        
+        
     }
     
 
 
     return (
         <>
-            <div className=' lg:block hidden lg:shadow-[0px_0px_1px_0px] lg:sticky top-0 bg-[white] z-99 relative'>
+            <div className=' lg:block hidden lg:shadow-[0px_0px_1px_0px] lg:sticky   top-0 bg-[white] z-99 relative'>
                 <div className='max-w-full   grid grid-cols-[7%_20%_auto_12%_12%]  items-center'>
                     <div className='border-r border-gray-100'>
                         <Link to={'/'}>   <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=900/assets/ui/print/bl_logo_web.png" alt="" />
@@ -62,7 +66,7 @@ export default function Header() {
                         <p onClick={accountBoxFn} className='flex items-center '>Account <FaCaretDown />
                         </p>
 
-                        <div className={`modal w-[18%] duration-[0.4s]   absolute top-20  text-left  bg-[white] shadow-[0px_1px_10px_0px] p-3 ${accountBox == false ? "top-[-400%]  opacity-[0]  " : "top-[98%] opacity-[1] "}   `}>
+                        <div className={`modal w-[18%] duration-[0.4s]   absolute top-20  text-left invisibe bg-[white] shadow-[0px_1px_10px_0px] p-3 ${accountBox == false ? "top-[-400%]  opacity-[0]  " : "top-[98%] opacity-[1] "}   `}>
 
                             <h1 className='text-[16px] font-bold '>My Account</h1>
                             <p className='text-[13px]'>6773620942</p>
@@ -92,16 +96,17 @@ export default function Header() {
 
 
                     {/* my cart  */}
-                    <div className='text-center'>
-                        <button className='bg-[#F8F8F8] hover:bg-[#ccc] p-3 rounded-xl text-[19px]' >My Cart</button>
+                    <div className='text-center border'>
+                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px]' >My Cart</button>
 
                             {/* my cart side box */}
 
 
-                        <div className="absolute top-[-0] right-0  w-[26%]   hidden  bg-[#F5F7FD] h-[100vh] overflow-y-scroll ">
+                        <div className={`absolute z-[999]   w-[26%]  top-[-0] duration-[1s] bg-[#F5F7FD] h-[100vh] overflow-y-scroll
+                            ${show == false ? "right-[-20%] opacity-[0] hidden " : " right-0 opacity-[1] block "} `}>
                             <div className='grid grid-cols-[80%_auto] justify-between bg-[white] p-3'>
                                 <div className=' text-left font-bold'>My Cart</div>
-                                <div className= 'cursor-pointer'onClick={()=> setshow(false)}>X</div>
+                                <div className= 'cursor-pointer'onClick={()=> setShowFn(true)}>X</div>
                             </div>
                             <div className=' w-[87%] mx-[auto]   mt-4 bg-[white] rounded-[6px] p-3'>
                                 <div className='grid grid-cols-[14%_auto] gap-2 '>
@@ -215,8 +220,8 @@ export default function Header() {
 
                             {/* process box */}
 
-                            <div className=' w-[400px] right-2 top-155 mt-1 bg-[white] rounded-[6px] p-2 fixed bottom-0 '>
-                                <div className='grid grid-cols-[20%_20%] bg-[green] items-center rounded-[8px] justify-between p-2 text-[white]'>
+                            <div className={` w-[400px] right-2 top-180 mt-1 bg-[white] rounded-[6px]   p-2 fixed duration-[1s]   border ${show == false ? "right-[-20%]  opacity[0] hidden" : " right-0  opacity[1] block " } `}>
+                                <div className='grid grid-cols-[20%_20%] bg-[green] items-center rounded-[8px] justify-between p-2 text-[white]' >
                                     <div className=' '>
                                         <h1>₹135</h1>
                                         <h1>Total</h1>
