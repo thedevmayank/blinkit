@@ -67,7 +67,7 @@ export default function Products_page() {
                                 return (
                                     <div className='  w-full px-2 py-1 '>
                                         <ul>
-                                            <li className=' text-[14px] font-bold cursor-pointer hover:bg-[#ccc] p-2 hover:text-[white]' onClick={() => getUrl(v.url)}>
+                                            <li className=' text-[14px] font-bold cursor-pointer hover:bg-[green] p-2 hover:text-[white]' onClick={() => getUrl(v.url)}>
                                                 {v.name}
                                             </li>
                                         </ul>
@@ -113,7 +113,7 @@ export default function Products_page() {
                                             <div className=' flex justify-between items-center  '>
                                                 <div className='text-[14px] '>${v.price}</div>
                                                 <div>
-                                                    <Link to={'/product_detail'}> <button className='bg-[#F7FFF9] rounded-[5px] p-[5px_17px_5px_17px] text-[14px]  border cursor-pointer hover:bg-green-100 '>ADD</button>
+                                                    <Link to={'/product_detail'}> <button className='bg-[#F7FFF9] rounded-[5px] p-[5px_17px_5px_17px] text-[14px]  border cursor-pointer hover:bg-[green] hover:text-[white] '>ADD</button>
                                                     </Link>
                                                 </div>
                                             </div>

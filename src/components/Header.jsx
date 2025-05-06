@@ -96,7 +96,7 @@ export default function Header() {
 
                     {/* my cart  */}
                     <div className='text-center border'>
-                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px]' >My Cart </button>
+                        <button onClick={setShowFn} className='bg-[#F8F8F8] hover:bg-[#ccc] p-3  rounded-xl text-[19px] cursor-pointer' >My Cart </button>
 
                             {/* my cart side box */}
 
@@ -219,7 +219,7 @@ export default function Header() {
 
                             {/* process box */}
 
-                            <div className={` w-[400px] right-2 top-180 mt-1 bg-[white] rounded-[6px]   p-2 fixed duration-[1s]   border ${show == false ? "right-[-20%]  opacity[0] hidden" : " right-0  opacity[1] block " } `}>
+                            <div className={` w-[400px] right-2 top-160 mt-1 bg-[white] rounded-[6px]   p-2 fixed duration-[1s] ${show == false ? "right-[-20%]  opacity[0] hidden" : " right-0  opacity[1] block " } `}>
                                 <div className='grid grid-cols-[20%_20%] bg-[green] items-center rounded-[8px] justify-between p-2 text-[white]' >
                                     <div className=' '>
                                         <h1>₹135</h1>
