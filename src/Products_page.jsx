@@ -6,12 +6,27 @@ import { Link } from 'react-router-dom'
 
 export default function Products_page() {
 
+
+    // for link category url to products
+
+    const[getCat,setgetCat]=useState(null)
+    console.log(getCat);
+    
+           
+
     const [allData, setAllData] = useState([])
 
     // for products
 
     const displayData = () => {
-        axios.get("https://dummyjson.com/products?limit=200")
+        let api;
+        if (getCat==null){
+            api="https://dummyjson.com/products?limit=200"
+        }
+        else{
+            api=getCat;
+        }
+        axios.get(api)
             .then((ress) => {
                 setAllData(ress.data.products)
 
@@ -25,7 +40,7 @@ export default function Products_page() {
 
     // for products category
     const [categories, setCategories] = useState([])
-    console.log(categories);
+    // console.log(categories);
 
     const displayCategory = () => {
         axios.get("https://dummyjson.com/products/categories")
@@ -43,14 +58,15 @@ export default function Products_page() {
     // for get categories url
 
     const getUrl=(url)=>{
-            console.log();
+        setgetCat(url);
             
     }
 
     useEffect(() => {
         displayData()
         displayCategory()
-    }, [])
+      
+    },[getCat])
 
 
     return (
@@ -100,7 +116,8 @@ export default function Products_page() {
                                 allData.map((v, i) => {
                                     return (
                                         <div className=' shadow-[0px_0px_3px_0px] m-2 p-2 bg-white flex flex-col justify-between '>
-                                            <Link to={"/product_detail"}>
+                                            {/* /product_detail/:id' */}
+                                            <Link to={`/product_detail/${v.id}`}>
                                                 <img src={v.thumbnail} /></Link>
                                             <div>
                                                 <p className=' grid grid-cols-[8%_7%]  items-center text-[10px] '><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=90/assets/eta-icons/15-mins.png" alt="" />

@@ -1,12 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCaretDown } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Footer } from './components/Footer';
 import Header from './components/Header';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Product_detail() {
+
+const productId= useParams().id
+
+
+
+const [getProductId,setProdctId]=useState([])
+const singleProduct=()=>{
+    axios.get(`https://dummyjson.com/products/${productId}`)
+     .then((ress)=>{
+        setProdctId(ress.data);
+        
+     })
+     .catch((error)=>{
+        console.log(error);
+        
+     })
+}
+useEffect(()=>{
+    singleProduct()
+},[])
+
+    
+
+
+
+
+
+
+
+
     var settings = {
         dots: false,
         infinite: true,
@@ -45,6 +77,8 @@ export default function Product_detail() {
     };
 
 
+
+
     return (
         <>
         <Header/>
@@ -53,9 +87,11 @@ export default function Product_detail() {
                 {/* left part start */}
                 <div className=' leftSide lg:border-r lg:border-b border-[#666B74] lg:block hidden'>
 
+                    {/* single image part */}
+
                     <div className='w-[80%] border-l border-b border-r mx-[auto] py-4 mb-7 border-[#666B74]' >
                         <div className='  flex justify-center'>
-                            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/2d2f35df-ff60-49c2-976c-226c65a135b6.jpg?ts=1739515697" alt="" />
+                            <img src={getProductId.thumbnail} alt="" />
                         </div>
                         <div className='w-[60%]  grid grid-cols-7 gap-3 mx-[auto] '>
                             <div className='shadow-[0px_0px_2px_0px] rounded-[4px]  '>
