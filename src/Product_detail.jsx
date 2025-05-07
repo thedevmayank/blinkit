@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Footer } from './components/Footer';
 import Header from './components/Header';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Product_detail() {
@@ -85,7 +85,7 @@ useEffect(()=>{
             <div className='w-full grid lg:grid-cols-[55%_45%] mb-3 px-8 '>
 
                 {/* left part start */}
-                <div className=' leftSide lg:border-r lg:border-b border-[#666B74] lg:block hidden'>
+                <div className=' leftSide lg:border-r lg:border-b border-[#666B74] lg:block hidden overflow-y-scroll h-[96vh] '>
 
                     {/* single image part */}
 
@@ -94,24 +94,10 @@ useEffect(()=>{
                             <img src={getProductId.thumbnail} alt="" />
                         </div>
                         <div className='w-[60%]  grid grid-cols-7 gap-3 mx-[auto] '>
-                            <div className='shadow-[0px_0px_2px_0px] rounded-[4px]  '>
-                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/da/cms-assets/cms/product/2d2f35df-ff60-49c2-976c-226c65a135b6.jpg?ts=1739515697" alt="" className='rounded-[10px]' />
+                            <div className='shadow-[0px_0px_2px_0px] rounded-[4px] '>
+                                <img src= {getProductId.thumbnail} alt="" className='rounded-[10px] ' />
                             </div>
-                            <div className='shadow-[0px_0px_2px_0px]  rounded-[4px] '>
-                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/da/cms-assets/cms/product/308ec640-0ed7-4f52-a348-21daede991b2.jpg?ts=1739515697" alt="" className='rounded-[10px]' />
-                            </div>
-                            <div className='shadow-[0px_0px_2px_0px] rounded-[4px]  '>
-                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/da/cms-assets/cms/product/2d2f35df-ff60-49c2-976c-226c65a135b6.jpg?ts=1739515697" alt="" className='rounded-[10px]' />
-                            </div>
-                            <div className='shadow-[0px_0px_2px_0px] rounded-[4px]  '>
-                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/da/cms-assets/cms/product/2d2f35df-ff60-49c2-976c-226c65a135b6.jpg?ts=1739515697" alt="" className='rounded-[10px]' />
-                            </div>
-                            <div className='shadow-[0px_0px_2px_0px]  rounded-[4px] '>
-                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/da/cms-assets/cms/product/308ec640-0ed7-4f52-a348-21daede991b2.jpg?ts=1739515697" alt="" className='rounded-[10px]' />
-                            </div>
-                            <div className='shadow-[0px_0px_2px_0px] rounded-[4px]  '>
-                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/da/cms-assets/cms/product/2d2f35df-ff60-49c2-976c-226c65a135b6.jpg?ts=1739515697" alt="" className='rounded-[10px]' />
-                            </div>
+                            
 
                         </div>
                     </div>
@@ -162,9 +148,11 @@ useEffect(()=>{
                     <div className='w-[80%] ml-8   mt-8'>
                         <div>
                             <ul className='flex gap-1 text-[14px] cursor-pointer font-bold'>
+                                <Link to={'/'}>
                                 <li>
                                     Home /
                                 </li>
+                                </Link>
                                 <li>
                                     Lighters & Accessories /
                                 </li>
